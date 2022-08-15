@@ -3,8 +3,8 @@ const canvas = document.querySelector('canvas');
 
 const context = canvas.getContext('2d');
 
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.width = 1024;
+canvas.height = 576;
 
 const gravity = 1.5;
 
@@ -69,8 +69,8 @@ const image = new Image();
 image.src = platform
 const player = new Player();
 const platforms = [
-  new Platform({ x: 200, y: 100, image: image}),
-  new Platform({ x: 500, y: 200, image: image}),
+  new Platform({ x: -1, y: 470, image: image}),
+  new Platform({ x: image.width-3, y: 470, image: image}),
 ];
 
 const keys = {
@@ -86,7 +86,8 @@ let scrollOffset = 0;
 
 function animate() {
   requestAnimationFrame(animate);
-  context.clearRect(
+  context.fillStyle = 'white';
+  context.fillRect(
       0,
       0,
       canvas.width,
