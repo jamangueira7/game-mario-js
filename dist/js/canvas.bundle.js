@@ -165,7 +165,8 @@ var Player = /*#__PURE__*/function () {
 var Platform = /*#__PURE__*/function () {
   function Platform(_ref) {
     var x = _ref.x,
-        y = _ref.y;
+        y = _ref.y,
+        image = _ref.image;
 
     _classCallCheck(this, Platform);
 
@@ -173,28 +174,32 @@ var Platform = /*#__PURE__*/function () {
       x: x,
       y: y
     };
-    this.width = 200;
-    this.height = 20;
+    this.image = image;
+    this.width = image.width;
+    this.height = image.height;
   }
 
   _createClass(Platform, [{
     key: "draw",
     value: function draw() {
-      context.fillStyle = 'blue';
-      context.fillRect(this.position.x, this.position.y, this.width, this.height);
+      context.drawImage(this.image, this.position.x, this.position.y);
     }
   }]);
 
   return Platform;
 }();
 
+var image = new Image();
+image.src = _img_platform_png__WEBPACK_IMPORTED_MODULE_0__["default"];
 var player = new Player();
 var platforms = [new Platform({
   x: 200,
-  y: 100
+  y: 100,
+  image: image
 }), new Platform({
   x: 500,
-  y: 200
+  y: 200,
+  image: image
 })];
 var keys = {
   right: {
@@ -209,10 +214,10 @@ var scrollOffset = 0;
 function animate() {
   requestAnimationFrame(animate);
   context.clearRect(0, 0, canvas.width, canvas.height);
-  player.update();
   platforms.forEach(function (platform) {
     platform.draw();
   });
+  player.update();
 
   if (keys.right.pressed && player.position.x < 400) {
     player.velocity.x = 5;
