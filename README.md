@@ -7,7 +7,7 @@
 
 <br>
 
-# Jogo RPG (cenário)
+# Jogo de plataforma
 
 ## 🚀 Tecnologias
 
@@ -27,6 +27,10 @@ Jogo em NodeJS para aprendizado. Aprendendo a montar o cenario, a crair a movime
 efito parallax, gravidade, movimentação, finalizar com vitoria e derrota.
 
 Canal [Chris Courses](https://www.youtube.com/watch?v=4q2vvZn5aoo)
+
+<p align="center">
+  <img alt="game" src=".github/project.PNG">
+</p>
 
 ## 🚀 Como Rodar
 
