@@ -1,21 +1,49 @@
-Canvas Boilerplate is the go-to solution for quickly creating modern canvas pieces using ES6 and webpack.
+<p align="center">
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-rodar">Como rodar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;
+  </p>
 
-## Getting Started
+<br>
 
-1.  Clone the repo:
+# Jogo RPG (cenário)
 
-        git clone https://github.com/christopher4lis/canvas-boilerplate.git
+## 🚀 Tecnologias
 
-2.  Install dependencies:
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-        yarn
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
+- [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [NodeJS](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
+- [NPM](https://www.npmjs.com/)
 
-    or
 
-        npm install
+## 💻 Projeto
 
-3.  Run webpack:
+Jogo em NodeJS para aprendizado. Aprendendo a montar o cenario, a crair a movimentação de personagem,
+efito parallax, gravidade, movimentação, finalizar com vitoria e derrota.
 
-        npm start
+Canal [Chris Courses](https://www.youtube.com/watch?v=4q2vvZn5aoo)
 
-Your canvas piece should open up automatically at http://localhost:3000 and you should see 'HTML CANVAS BOILERPLATE' on hover.
+## 🚀 Como Rodar
+
+- Clone o projeto.
+- Entre na pasta do projeto e rode npm install.
+- "npm start".
+- Acesse http://localhost:3000/.
+
+## 🤔 Como contribuir
+
+- Faça um fork desse repositório;
+- Cria uma branch com a sua feature: `git checkout -b minha-feature`;
+- Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`;
+- Faça push para a sua branch: `git push origin minha-feature`.
+
+Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
+
+## 📝 Licença
+
+Esse projeto está sob a licença MIT.
