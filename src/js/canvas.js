@@ -1,6 +1,7 @@
 import platform from '../img/platform.png';
 import hills from '../img/hills.png';
 import background from '../img/background.png';
+import platformSmallTall from '../img/platformSmallTall.png';
 
 const canvas = document.querySelector('canvas');
 
@@ -111,9 +112,15 @@ let scrollOffset = 0;
 
 function init() {
   const platformImage = createImage(platform);
+  const platformSmallTallImage = createImage(platformSmallTall);
 
   player = new Player();
   platforms = [
+    new Platform({
+      x: platformImage.width * 4 + 300 -2 + platformImage.width - platformSmallTallImage.width,
+      y: 270,
+      image: platformSmallTallImage
+    }),
     new Platform({
       x: -1,
       y: 470,
@@ -136,6 +143,11 @@ function init() {
     }),
     new Platform({
       x: platformImage.width * 4 + 300 -2,
+      y: 470,
+      image: platformImage
+    }),
+    new Platform({
+      x: platformImage.width * 5 + 700 -2,
       y: 470,
       image: platformImage
     }),
@@ -178,7 +190,8 @@ function animate() {
 
   if (keys.right.pressed && player.position.x < 400) {
     player.velocity.x = player.speed;
-  } else if (keys.left.pressed && player.position.x > 100) {
+  } else if ((keys.left.pressed && player.position.x > 100)
+  || (keys.left.pressed && scrollOffset === 0 && player.position.x > 0)) {
     player.velocity.x = -player.speed;
   } else {
     player.velocity.x = 0;
@@ -192,7 +205,7 @@ function animate() {
         genericObject.position.x -= player.speed * 0.66;
       });
 
-    } else if (keys.left.pressed) {
+    } else if (keys.left.pressed && scrollOffset > 0) {
       scrollOffset -= player.speed;
       platforms.forEach((platform) => {
         platform.position.x += player.speed;
@@ -215,7 +228,7 @@ function animate() {
   });
 
   //win condition
-  if (scrollOffset > 2000) {
+  if (scrollOffset > platformImage.width * 5 + 300 -2) {
     console.log('you win!');
   }
 
@@ -243,7 +256,7 @@ window.addEventListener('keydown', ({ keyCode}) => {
       break;
     case 87:
       console.log('up');
-      player.velocity.y -= 10
+      player.velocity.y -= 20
       break;
   }
 });
@@ -263,7 +276,6 @@ window.addEventListener('keyup', ({ keyCode}) => {
       break;
     case 87:
       console.log('up');
-      player.velocity.y -= 20
       break;
   }
 });
